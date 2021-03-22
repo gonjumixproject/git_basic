@@ -18,9 +18,9 @@
 
 ## How to set global user-pass values
 
-` git config --global user.name "yourusername"
- git config --global user.email "yourmail"
- git config --global --list`
+` git config --global user.name "yourusername"`
+` git config --global user.email "yourmail"`
+ `git config --global --list`
 
 ## How to clone a githup repro
 ## How to add a new file into the remote github repro
