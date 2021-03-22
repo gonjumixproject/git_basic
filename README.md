@@ -49,6 +49,78 @@ or
 # Git Basic Commands
 
 ## Starting a Project
+> Starting a github project without any source code 
+> 
+```
+/git# git init fresh_start
+Initialized empty Git repository in /root/git/fresh_start/.git/
+/git# ls fresh_start  
+~/git# cd fresh_start/
+~/git/fresh_start# ls
+~/git/fresh_start# ls -al
+total 12
+drwxr-xr-x 3 root root 4096 Mar 22 09:58 .
+drwxr-xr-x 4 root root 4096 Mar 22 09:58 ..
+drwxr-xr-x 7 root root 4096 Mar 22 09:58 .git
+~/git/fresh_start# cd .git/
+~/git/fresh_start/.git# ls -l
+
+-rw-r--r-- 1 root root   23 Mar 22 09:58 HEAD
+drwxr-xr-x 2 root root 4096 Mar 22 09:58 branches
+-rw-r--r-- 1 root root   92 Mar 22 09:58 config
+-rw-r--r-- 1 root root   73 Mar 22 09:58 description
+drwxr-xr-x 2 root root 4096 Mar 22 09:58 hooks
+drwxr-xr-x 2 root root 4096 Mar 22 09:58 info
+drwxr-xr-x 4 root root 4096 Mar 22 09:58 objects
+drwxr-xr-x 4 root root 4096 Mar 22 09:58 refs
+~/git/fresh_start/.git# cd ../
+~/git/fresh_start# git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+~/git/fresh_start# vi firstfile.txt
+~/git/fresh_start# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        firstfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+~/git/fresh_start# git add firstfile.txt
+~/git/fresh_start# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   firstfile.txt
+
+~/git/fresh_start# git commit
+Aborting commit due to empty commit message.
+~/git/fresh_start# git commit
+[master (root-commit) d37c0c4] this is my first file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 firstfile.txt
+~/git/fresh_start# git status
+On branch master
+nothing to commit, working tree clean
+~/git/fresh_start# cd ../
+~/git# pwd
+/root/git
+~/git# cd fresh_start/
+~/git/fresh_start# ls -l
+total 4
+-rw-r--r-- 1 root root 11 Mar 22 10:24 firstfile.txt
+~/git# rm -r fresh_start/
+
+```
+
 ## Adding Git to an existing Project
 ## Starting on Github by joining an existing Project
 ## Basic git workflow
