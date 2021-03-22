@@ -2,8 +2,23 @@
   * [How to set global user-pass values ](https://github.com/gonjumixproject/git_basic/blob/main/README.md#how-to-set-global-user-pass-values)
   * [How to clone a githup repro ](https://github.com/gonjumixproject/git_basic/blob/main/README.md#how-to-clone-a-githup-repro)
   * [How to set global user-pass values ](https://github.com/gonjumixproject/git_basic/blob/main/README.md#how-to-add-a-new-file-into-the-remote-github-repro)
-- [Git Basic Commands](#heading-1)
-  * [Starting a Project]()
+- [Git Basic Commands](https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-basic-commands)
+  * [Starting a Project](https://github.com/gonjumixproject/git_basic/blob/main/README.md#starting-a-project)
+  * [Adding Git to an existing Project](https://github.com/gonjumixproject/git_basic/blob/main/README.md#starting-a-project)
+  * [Starting on Github by joining an existing Project](https//github.com/gonjumixproject/git_basic/blob/main/README.md#starting-a-project)
+  * [Basic Git Workflow]
+  * [Tracked file]
+  * [Editting file]
+  * [Recursive Add]
+  * [Backing out changes]
+  * [Renaming and Moving Files]
+  * [Deleting Files]
+  * [History]
+  * [Git Alias]
+  * [Ignoring unwanted files and folders]
+  * [Cleanup and back to origin]
+  * 
+
 
 # Git Quick Start
 
@@ -34,4 +49,17 @@ or
 # Git Basic Commands
 
 ## Starting a Project
+## Adding Git to an existing Project
+## Starting on Github by joining an existing Project
+## Basic git workflow
+## Tracked file
+## Editting file
+## Recursive Add
+## Backing out changes
+## Renaming and Moving Files
+## Deleting Files
+## History
+## Git Alias
+## Ignoring unwanted files and folders
+## Cleanup and back to origin
 
