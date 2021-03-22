@@ -1,4 +1,4 @@
-- [Heading](#Git Quick Start)
+- [Heading](#heading)
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
