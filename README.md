@@ -2,13 +2,8 @@
   * [How to set global user-pass values ](https://github.com/gonjumixproject/git_basic/blob/main/README.md#how-to-set-global-user-pass-values)
   * [How to clone a githup repro ](https://github.com/gonjumixproject/git_basic/blob/main/README.md#how-to-clone-a-githup-repro)
   * [How to set global user-pass values ](https://github.com/gonjumixproject/git_basic/blob/main/README.md#how-to-add-a-new-file-into-the-remote-github-repro)
-- [Heading](#heading-1)
-  * [Sub-heading](#sub-heading-1)
-    + [Sub-sub-heading](#sub-sub-heading-1)
-- [Heading](#heading-2)
-  * [Sub-heading](#sub-heading-2)
-    + [Sub-sub-heading](#sub-sub-heading-2)
-
+- [Git Basic Commands](#heading-1)
+  * [Starting a Project]()
 
 # Git Quick Start
 
@@ -35,4 +30,8 @@ git clone https://github.com/gonjumixproject/git_basics.git
 or
 /git/git_basics# git push origin master
 ```
+
+# Git Basic Commands
+
+## Starting a Project
 
