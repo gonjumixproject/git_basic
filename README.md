@@ -1,4 +1,4 @@
-- [Heading](#heading)
+- [Heading](#Git Quick Start)
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
@@ -9,7 +9,7 @@
     + [Sub-sub-heading](#sub-sub-heading-2)
 
 
-# Heading levels
+# Git Quick Start
 
 > This is a fixture to test heading levels
 
