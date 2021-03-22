@@ -6,17 +6,17 @@
   * [Starting a Project](https://github.com/gonjumixproject/git_basic/blob/main/README.md#starting-a-project)
   * [Adding Git to an existing Project](https://github.com/gonjumixproject/git_basic/blob/main/README.md#starting-a-project)
   * [Starting on Github by joining an existing Project](https//github.com/gonjumixproject/git_basic/blob/main/README.md#starting-a-project)
-  * [Basic Git Workflow]
-  * [Tracked file]
-  * [Editting file]
-  * [Recursive Add]
-  * [Backing out changes]
-  * [Renaming and Moving Files]
-  * [Deleting Files]
-  * [History]
-  * [Git Alias]
-  * [Ignoring unwanted files and folders]
-  * [Cleanup and back to origin]
+  * [Basic Git Workflow](https://github.com/gonjumixproject/git_basic/blob/main/README.md#basic-git-workflow)
+  * [Tracked file](https://github.com/gonjumixproject/git_basic/blob/main/README.md#tracked-file)
+  * [Editting file](https://github.com/gonjumixproject/git_basic/blob/main/README.md#editting-file)
+  * [Recursive Add](https://github.com/gonjumixproject/git_basic/blob/main/README.md#recursive-add)
+  * [Backing out changes](https://github.com/gonjumixproject/git_basic/blob/main/README.md#backing-out-changes)
+  * [Renaming and Moving Files](https://github.com/gonjumixproject/git_basic/blob/main/README.md#renaming-and-moving-files)
+  * [Deleting Files](https://github.com/gonjumixproject/git_basic/blob/main/README.md#deleting-files)
+  * [History](https://github.com/gonjumixproject/git_basic/blob/main/README.md#history)
+  * [Git Alias](https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-alias)
+  * [Ignoring unwanted files and folders](https://github.com/gonjumixproject/git_basic/blob/main/README.md#ignoring-unwanted-files-and-folders)
+  * [Cleanup and back to origin](https://github.com/gonjumixproject/git_basic/blob/main/README.md#cleanup-and-back-to-origin)
   * 
 
 
