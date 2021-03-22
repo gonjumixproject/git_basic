@@ -1,5 +1,7 @@
-- [Heading](https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-quick-start )
-  * [Sub-heading](#sub-heading)
+- [Git Quick Start](https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-quick-start )
+  * [How to set global user-pass values ](#sub-heading)
+  * [How to clone a githup repro ](#sub-heading)
+  * [How to set global user-pass values ](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
   * [Sub-heading](#sub-heading-1)
@@ -12,41 +14,10 @@
 # Git Quick Start
 
 > This is a fixture to test heading levels
+> 
 
+## How to set global user-pass values
+## How to clone a githup repro
+## How to add a new file into the remote github repro
 <!-- toc -->
 
-## Heading
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
-
-#### Sub-sub-heading
-
-This is an h3 heading
-
-## Heading
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
-
-#### Sub-sub-heading
-
-This is an h3 heading
-
-## Heading
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
-
-#### Sub-sub-heading
-
-This is an h3 heading
