@@ -1,4 +1,4 @@
-- [Heading](#https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-quick-start )
+- [Heading](https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-quick-start )
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
