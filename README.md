@@ -283,8 +283,120 @@ To https://github.com/gonjumixproject/iptv.git
 Go back to your browser and check your github repro on the github page to make sure the file is there.
 
 ## Tracked file
+Add new lines to your example test file;
+```
+:~/git/iptv# vi test.txt
+```
+Check the git status;
+```
+~/git/iptv# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+You can shortly both add and commit in one line; 
+```
+:~/git/iptv# git commit -am "this is my second commit"
+[master db1d5c1d] this is my second commit
+ 1 file changed, 1 insertion(+)
+
+```
+A tracked file is any file that Git is aware of and tracking actively. That would be any file that has already been committed into the Git repository,or any file that has been added to the Git index, or the Git staging area.
+
+git ls-files will list all the tracked files.
+
+```
+~/git/iptv# git ls-files
+
+```
 ## Editting file
+
+When you modified a file, to you need to perform an add and commit to put that modified file into the staging area;
+
+```
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+```
+
+To put that into the staging area, you need to perform only "git add". If you want to add it into the local repro, you need to perform a commit. 
+
+You can do the both via "git commit -am "
+
+```
+~/git/iptv# git commit -am "modifed another line"
+[master c9a3a2da] modifed another line
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+
 ## Recursive Add
+
+Lets assume you added a recursive direcorty into your git repro. 
+
+```
+lvl1/
+├── lvl1.txt
+└── lvl2
+    ├── lvl2.txt
+    └── lvl3
+        └── lvl13.txt
+```
+
+When you check the git status, you will only see the top directory for the new added files/folder.
+```
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        lvl1/
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+To track all those files recursively you need to perform perform below;
+
+```
+~/git/iptv# git add .
+```
+With the add command that file will be placed as staged.
+```
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   lvl1/lvl1.txt
+        new file:   lvl1/lvl2/lvl2.txt
+        new file:   lvl1/lvl2/lvl3/lvl13.txt
+
+```
+You can perform a commit to put them into your repro. 
+```
+~/git/iptv# git commit -m "adding several files recursively"
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
 ## Backing out changes
 ## Renaming and Moving Files
 ## Deleting Files
