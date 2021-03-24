@@ -161,7 +161,98 @@ nothing to commit, working tree clean
 ```
 
 ## Starting on Github by joining an existing Project
+First one project over the github page, and from your profile go to the forked repro and clone the project to your local.
+
+```
+~/git# git clone https://github.com/gonjumixproject/iptv.git
+```
+Get into the file via "cd"
+
+```
+~/git# cd iptv/
+```
+Check the git files
+```
+~/git/iptv# ls -al
+
+  4096 Mar 24 08:35 .
+  4096 Mar 24 08:34 ..
+  4096 Mar 24 08:35 .git
+  4096 Mar 24 08:35 .github
+   134 Mar 24 08:35 .gitignore
+  4096 Mar 24 08:35 .readme
+ 20151 Mar 24 08:35 CONTRIBUTING.md
+  1211 Mar 24 08:35 LICENSE
+ 60992 Mar 24 08:35 README.md
+  4096 Mar 24 08:35 channels
+  5495 Mar 24 08:35 index.m3u
+  7620 Mar 24 08:35 package-lock.json
+   407 Mar 24 08:35 package.json
+  4096 Mar 24 08:35 scripts
+  
+```
+Check git status;
+
+```
+/git/iptv# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+```
+
+
 ## Basic git workflow
+
+
+The "git status" command, moving forward, will tell us the difference between the working directory, Git's staging area, the actual Git repository that is on the local system, as well as how that compares to the remote repository.
+
+==================================== Local ================== // ================== Remote (GitHub Server)==================
+Working Directory >> Staging Area >> Repository (.git folder) 
+
+
+
+Create a new file, in your local, and then use git status; "nothing added to commit but untracked files present"
+```
+~/git/iptv# vi test.txt
+~/git/iptv# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+Use git add file to put the file into the staging area. When you used "git add" but did not committed any commit yet, the file will be in the staging area;
+This file is not yet committed, but its something that git is tracking, and its awaiting the next commit.
+```
+~/git/iptv# git add test.txt
+
+~/git/iptv# git status
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test.txt
+```
+Git commit command returns "master" which is the current branch that it commits, and then "02451dcd" which is a SHA-1 which is a unique identifier for the commit. 
+```
+~/git/iptv# git commit -m "my first commit"
+[master 02451dcd] my first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+```
+When you do a commit, everythin in the staging area is committed. 
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+
 ## Tracked file
 ## Editting file
 ## Recursive Add
