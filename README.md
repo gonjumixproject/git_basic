@@ -470,10 +470,109 @@ nothing to commit, working tree clean
 ```
 
 
-
-
-
 ## Renaming and Moving Files
+
+With the "git mv" command you will be able to rename the file, and git will be staged that file but it will be not committed. So you can backuout the renaming.
+```
+~/git/iptv/lvl1/lvl2/lvl3# git mv lvl13.txt lvl13_1.txt
+:~/git/iptv/lvl1/lvl2/lvl3# ls -l
+total 4
+-rw-r--r-- 1 root root 18 Mar 24 10:00 lvl13_1.txt
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2/lvl3# git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    lvl13.txt -> lvl13_1.txt
+```
+
+If I change the name of the file via using the bash "mv" command, git will get that operation as two operations.
+```
+~/git/iptv/lvl1/lvl2# git status
+On branch master
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    lvl2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        lvl2_1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+-A will update any files renamed/moved or deleted.
+```
+~/git/iptv/lvl1/lvl2# git add -A
+~/git/iptv/lvl1/lvl2# git status
+On branch master
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    lvl2.txt -> lvl2_1.txt
+```
+If i want to backout the git rename, then I will need to use the git mv command to directly change the name back to old name;
+```
+~/git/iptv/lvl1/lvl2# git mv lvl2_1.txt 2.txt
+~/git/iptv/lvl1/lvl2# ls
+2.txt  lvl3
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2# git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    lvl2_1.txt -> 2.txt
+```
+
+If i rename it back to old file name, git status will not detect any changes.
+```
+~/git/iptv/lvl1/lvl2# git mv 2.txt lvl2_1.txt
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2# git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+```
+Move the file via git mv
+```
+~/git/iptv/lvl1/lvl2# git mv lvl2_1.txt lvl3/
+~/git/iptv/lvl1/lvl2# git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    lvl2_1.txt -> lvl3/lvl2_1.txt
+
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2# cd lvl3/
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2/lvl3# git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    ../lvl2_1.txt -> lvl2_1.txt
+
+~/git/iptv/lvl1/lvl2/lvl3# cd ../
+~/git/iptv/lvl1/lvl2# git commit -m "moving file"
+[master 8cb12ab5] moving file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename lvl1/lvl2/{ => lvl3}/lvl2_1.txt (100%)
+
+nothing to commit, working tree clean
+```
+
+
 ## Deleting Files
 ## History
 ## Git Alias
