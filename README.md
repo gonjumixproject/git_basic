@@ -244,14 +244,43 @@ Git commit command returns "master" which is the current branch that it commits,
  1 file changed, 1 insertion(+)
  create mode 100644 test.txt
 ```
-When you do a commit, everythin in the staging area is committed. 
+When you do a commit, everything in the staging area is committed, and added to the local repro.
+```
 ~/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 1 commit.
   (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
+```
 
+So for now, a "git push" command needs to be performed to publish every file in our local workspace staging area to github remote server. 
+
+But before that "git push" command, we will perform "git pull origin master". This will update our repro with any changes that may have happend on the remote repro down to our local repro, just to make sure we're up tp date before we do any pushes back up to our remote repro.
+
+```
+~/git/iptv# git pull origin master
+From https://github.com/gonjumixproject/iptv
+ * branch              master     -> FETCH_HEAD
+Already up to date.
+```
+
+Now we will perform a "git push"
+
+```
+~/git/iptv# git push origin master
+Username for 'https://github.com': gonjumixproject
+Password for 'https://gonjumixproject@github.com':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 297 bytes | 297.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/gonjumixproject/iptv.git
+   c5913061..02451dcd  master -> master
+```
+Go back to your browser and check your github repro on the github page to make sure the file is there.
 
 ## Tracked file
 ## Editting file
