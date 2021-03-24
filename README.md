@@ -107,6 +107,50 @@ Changes to be committed:
  ```
 
 ## Adding Git to an existing Project
+
+Lets assume you have a source code in your local folder
+```
+~/newfolder# ls -al
+
+08:14 .
+08:14 ..
+08:14 install.sh
+
+~/newfolder# git init
+Initialized empty Git repository in /root/newfolder/.git/
+
+~/newfolder# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        install.sh
+nothing added to commit but untracked files present (use "git add" to track)
+
+~/newfolder# git add .
+~/newfolder# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   install.sh
+
+~/newfolder# git commit -m "my first commit, inline"
+[master (root-commit) 39bf6a0] my first commit, inline
+ 1 file changed, 86 insertions(+)
+ create mode 100755 install.sh
+ 
+~/newfolder# git status
+On branch master
+nothing to commit, working tree clean
+
+
+```
+
 ## Starting on Github by joining an existing Project
 ## Basic git workflow
 ## Tracked file
