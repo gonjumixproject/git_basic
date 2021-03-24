@@ -206,10 +206,10 @@ nothing to commit, working tree clean
 
 
 The "git status" command, moving forward, will tell us the difference between the working directory, Git's staging area, the actual Git repository that is on the local system, as well as how that compares to the remote repository.
-
+```
 ==================================== Local ================== // ================== Remote (GitHub Server)==================
 Working Directory >> Staging Area >> Repository (.git folder) 
-
+```
 
 
 Create a new file, in your local, and then use git status; "nothing added to commit but untracked files present"
