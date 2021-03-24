@@ -398,6 +398,81 @@ Your branch is ahead of 'origin/master' by 4 commits.
 nothing to commit, working tree clean
 ```
 ## Backing out changes
+
+Lets add some new lines into the lvl1.txt file, and perform a git status;
+```
+~/git/iptv/lvl1# git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   lvl1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+Lets put them into the staging area 
+```
+~/git/iptv/lvl1# git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   lvl1.txt
+```
+But now you think that this file should not be committed yet, should be unstaged. You will be back to the "modified state"
+```
+~/git/iptv/lvl1# git restore --staged lvl1.txt
+~/git/iptv/lvl1# git status;
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   lvl1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+You can also perform following command for the same;
+```
+~/git/iptv/lvl1# git reset HEAD lvl1.txt
+Unstaged changes after reset:
+M       lvl1/lvl1.txt
+
+~/git/iptv/lvl1#  git status;
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   lvl1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+Once the file is unstaged, you can directly go back to the previous-unmodified file as below;
+
+```
+~/git/iptv/lvl1# git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+```
+
+
+
+
+
 ## Renaming and Moving Files
 ## Deleting Files
 ## History
