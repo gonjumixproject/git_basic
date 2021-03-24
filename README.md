@@ -553,8 +553,8 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         renamed:    lvl2_1.txt -> lvl3/lvl2_1.txt
 
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2# cd lvl3/
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2/lvl3# git status
+~/git/iptv/lvl1/lvl2# cd lvl3/
+:~/git/iptv/lvl1/lvl2/lvl3# git status
 On branch master
 Your branch is ahead of 'origin/master' by 6 commits.
   (use "git push" to publish your local commits)
@@ -572,10 +572,240 @@ Changes to be committed:
 nothing to commit, working tree clean
 ```
 
-
 ## Deleting Files
+
+If you try to remove an untracked file via "git rm", git will not able to find. so you need to use "rm" for untracked files.
+```
+~/git/iptv# vi test2.txt
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 8 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+~/git/iptv# git rm test2.txt
+fatal: pathspec 'test2.txt' did not match any files
+```
+
+List all the tracked files, and use "git rm" to remove a tracked file. The delete will be staged, but you need to perform a commit to make it permanent.
+```
+~/git/iptv# git ls-files
+..
+~/git/iptv# git rm test.txt
+rm 'test.txt'
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 8 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    test.txt
+:~/git/iptv# git commit -m 'deleting this file'
+
+```
+Backout the deletion : git restore command will unstaged the deletion, it will not restore the file to the file system. You need to perform "git checkout" command to do that.
+
+```
+~/git/iptv# git add newfile
+~/git/iptv# git commit -m "a new fil"
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv# git rm newfile
+rm 'newfile'
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 10 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    newfile
+
+~/git/iptv# git restore --staged newfile
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 10 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    newfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+~/git/iptv#  git checkout -- newfile
+```
+
+If you remove a tracked file without using the "git rm" commands. You can backout the rm command like in the previous section. (git checkout)
+```
+~/git/iptv# rm newfile
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 10 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    newfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+:~/git/iptv# git add -A
+```
 ## History
+
+```
+~/git/iptv# git log
+commit 1e999c1d120c35bb6cca253c60faee4dd6d38c52 (HEAD -> master)
+Author: gonjumixproject <gonjmixproject@gmail.com>
+Date:   Wed Mar 24 10:29:48 2021 +0000
+
+    a new fil
+```
+
+The commit line has been shortened;
+```
+~/git/iptv# git log --abbrev-commit
+
+
+commit 54645127
+Author: gonjumixproject <gonjmixproject@gmail.com>
+Date:   Wed Mar 24 10:03:41 2021 +0000
+
+    renaming the file
+```
+
+```
+~/git/iptv# git log --oneline --graph --decorate
+
+* 1e999c1d (HEAD -> master) a new fil
+* 4a98b1e8 deleting this file
+* d165b73f mving the file back
+* 8cb12ab5 moving file
+* 15d001b2 renaming lvl2 file
+* 54645127 renaming the file
+* bf84c36b iadding several file rev<U+0080>kbcursivelyU+0080>ýa:wq^M:wq^MU+0080>ýa:q!
+* c9a3a2da modifed another line
+* 81d3ac9b modifed a line
+* db1d5c1d this is my second commit
+* 02451dcd (origin/master, origin/HEAD) my first commit
+*   c5913061 Merge branch 'master' of https://github.com/iptv-org/iptv
+|\
+| * 2299ed59 [Bot] Format playlists
+* | 9f1caa36 [Bot] Update README.md
+```
+
+Only specified commits;
+```
+~/git/iptv# git log d165b73f...54645127
+commit d165b73f81445c309af4b3c67eb9cc9a664eaf75
+Author: gonjumixproject <gonjmixproject@gmail.com>
+Date:   Wed Mar 24 10:16:12 2021 +0000
+
+    mving the file back
+
+commit 8cb12ab55d7043defd497b014675070611156035
+Author: gonjumixproject <gonjmixproject@gmail.com>
+Date:   Wed Mar 24 10:13:50 2021 +0000
+
+    moving file
+
+commit 15d001b24f6d4813d65033695b28bb1340a2dc33
+Author: gonjumixproject <gonjmixproject@gmail.com>
+Date:   Wed Mar 24 10:08:44 2021 +0000
+```
+
+Date specified history;
+
+```
+:~/git/iptv# git log --since="3 days ago"
+
+commit bf84c36b1412c02b08fc4a8eb0d72ed6419e000b
+Author: gonjumixproject <gonjmixproject@gmail.com>
+Date:   Wed Mar 24 09:40:50 2021 +0000
+
+    iadding several file rev<U+0080>kbcursivelyU+0080>ýa:wq^M:wq^MU+0080>ýa:q!
+
+commit c9a3a2da4c0ae320b14679f2ccecb144b7eac189
+Author: gonjumixproject <gonjmixproject@gmail.com>
+```
+File specified history;
+
+```
+~/git/iptv# git log -- newfile
+commit 1e999c1d120c35bb6cca253c60faee4dd6d38c52 (HEAD -> master)
+Author: gonjumixproject <gonjmixproject@gmail.com>
+Date:   Wed Mar 24 10:29:48 2021 +0000
+
+    a new fil
+```
+
+Will show the latest file detailed histroy;
+```
+~/git/iptv# git show
+commit 1e999c1d120c35bb6cca253c60faee4dd6d38c52 (HEAD -> master)
+Author: gonjumixproject <gonjmixproject@gmail.com>
+Date:   Wed Mar 24 10:29:48 2021 +0000
+
+    a new fil
+
+diff --git a/newfile b/newfile
+new file mode 100644
+index 00000000..e69de29b
+```
 ## Git Alias
+
+Will create a shorter command as alias named "hist" for "log --all --graph --decorate --oneline" command;
+
+```
+ ~/git/iptv#git config --global alias.hist "log --all --graph --decorate --oneline"
+ ~/git/iptv#git hist
+ 
+ ~/git/iptv# vi ~/.gitconfig
+ [alias]
+        hist = log --all --graph --decorate --oneline
+ ```
+ 
+ 
 ## Ignoring unwanted files and folders
+
+Editting ".gitignore" file will be helpfull for that;
+```
+.gitignore
+```
+
 ## Cleanup and back to origin
+
+We have 10 commits ahead from the original thing;
+```
+~/git/iptv# git status
+On branch master
+Your branch is ahead of 'origin/master' by 10 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
+Push the changes to the github
+```
+~/git/iptv# git pull origin master
+From https://github.com/gonjumixproject/iptv
+ * branch              master     -> FETCH_HEAD
+Already up to date.
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv# git push origin master
+Username for 'https://github.com': gonjumixproject
+Password for 'https://gonjumixproject@github.com':
+Enumerating objects: 39, done.
+Counting objects: 100% (39/39), done.
+Compressing objects: 100% (30/30), done.
+Writing objects: 100% (37/37), 2.96 KiB | 433.00 KiB/s, done.
+Total 37 (delta 11), reused 1 (delta 0)
+remote: Resolving deltas: 100% (11/11), completed with 1 local object.
+To https://github.com/gonjumixproject/iptv.git
+  02451dcd..1e999c1d  master -> master
+```
+
+
 
