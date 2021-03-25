@@ -856,3 +856,77 @@ If you receive a fatal error, most probably thats because your branch name is no
 ```
 https://stackoverflow.com/questions/45096755/fatal-ambiguous-argument-origin-unknown-revision-or-path-not-in-the-working
 ```
+
+# Branching and Merging
+
+## Branching basics
+
+We were doing all the changes on "master" branch, which is not a good practice.
+We should be doing is seperate our changes into brances, that makes more sense, to isolate our changes.
+
+Check you current brach;
+```
+git status
+```
+List the existing branches;
+```
+~/git/git_basic# git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+```
+
+Create a new branch 
+```
+~/git/git_basic# git branch mynewbranch
+~/git/git_basic# git branch -a
+* main
+  mynewbranch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+```
+Switch to the newly createad branch
+
+```
+~/git/git_basic# git checkout mynewbranch
+M       README.md
+Switched to branch 'mynewbranch'
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/git_basic# git branch -a
+  main
+* mynewbranch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+```
+Check the history to see what happend;
+```
+~/git/git_basic# git log --oneline --decorate
+77dbf07 (HEAD -> mynewbranch, origin/main, origin/HEAD, main) Merge branch 'main' of https://github.com/gonjumixproject/git_basic into main :q!
+```
+Go back to your main branch;
+
+```
+~/git/git_basic# git checkout main
+
+M       README.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+```
+Change your branch name;
+```
+~/git/git_basic# git branch -m mynewbranch newbranch
+~/git/git_basic# git branch -a
+* main
+  newbranch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+```
+Delete the branch;
+```
+~/git/git_basic# git branch -d newbranch
+```
+## Branching && Merging
+
+
+
+
