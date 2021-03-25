@@ -963,3 +963,8 @@ Perform git merge;
 ```
  git merge
 ```
+Delete the branch;
+
+```
+git branch -d ReadmeEdits
+```
