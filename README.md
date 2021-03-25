@@ -811,24 +811,18 @@ To https://github.com/gonjumixproject/iptv.git
 
 #Comprasions
 
-## Comparing working directory and staging area 
+## Comparing working directory and staging area and git repro
 
-So git status will show you that the file is modified but will not show you which files are modified. To understand that you will need git diff command.
+To add the changes into the staging area, you need to perform : Git Add 
+To add the staging area docs into git repro in your local : Git Commit
+To add the git repro to the git local server : Git Push
+To get the latest updates from the git local server : Git Pull
 
-```
-~/git/iptv# git diff
-diff --git a/README.md b/README.md
-index c6b6a091..c3e106bd 100644
---- a/README.md
-+++ b/README.md
-@@ -8,6 +8,8 @@ what you gonna do
+To see the differences between the staging area (latest add command) and working space : ``` git diff or git difftool```
+To see the differences between the git repro ( latest commit command) and working space :```  git diff HEAD or git difftool HEAD ``` 
+To see the differences between the staging area ( latest add commad ) and git repro ( last commit) : ``` git diff --staged HEAD or git difftool --staged HEAD```
 
- I have another readme file as well, so we will see what is gonna happen
+## Limiting the Comparsons to one File 
 
-+tests
-```
-Or you can use "git difftool" command.
 
-The "git diff" and "difftool" command are all for the "NOT STAGED" modifications. If you perform an add for that projects, then diff/difftool will not show any difference. 
 
-## Comparing working directory and git repro ( last commit)
