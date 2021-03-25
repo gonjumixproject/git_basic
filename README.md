@@ -925,8 +925,42 @@ Delete the branch;
 ```
 ~/git/git_basic# git branch -d newbranch
 ```
+
+
+
 ## Branching && Merging
 
+Create a new branch, and directly switch to that branch;
+```
+~/git/git_basic# git checkout -b ReadmeEdits
+Switched to a new branch 'ReadmeEdits'
+~/git/git_basic# git status
+On branch ReadmeEdits
+nothing to commit, working tree clean
+```
+We committed a change on ReadmeEdits branch, but we need that changes on master as well.
 
+```
+~/git/git_basic# git commit -am "changing the file"
+[ReadmeEdits 78d636a] changing the file
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+~/git/git_basic# git log --oneline
+78d636a (HEAD -> ReadmeEdits) changing the file
+``
 
+Before merging the changes, we wanna know the differences.
 
+Switch to the main branch;
+```
+git checkout main
+```
+Check the differences;
+```
+git difftoll main ReadmeEdits
+
+```
+Perform git merge;
+
+```
+ git merge
+```
