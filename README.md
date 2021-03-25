@@ -845,3 +845,9 @@ Origin/master is your remote repro in github server
 ```
 git diff master origin/master
 ```
+
+If you receive a fatal error, most probably thats because your branch name is not "master" but its something else instead. Follow below stackoverflow link for the solution.
+
+```
+https://stackoverflow.com/questions/45096755/fatal-ambiguous-argument-origin-unknown-revision-or-path-not-in-the-working
+```
