@@ -928,7 +928,7 @@ Delete the branch;
 
 
 
-## Branching && Merging
+## Branching && Merging && Fast Forward Merge
 
 Create a new branch, and directly switch to that branch;
 ```
@@ -968,3 +968,7 @@ Delete the branch;
 ```
 git branch -d ReadmeEdits
 ```
+
+## Disable Fast Forward Merge
+
+
