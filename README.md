@@ -18,6 +18,11 @@
   * [Ignoring unwanted files and folders](https://github.com/gonjumixproject/git_basic/blob/main/README.md#ignoring-unwanted-files-and-folders)
   * [Cleanup and back to origin](https://github.com/gonjumixproject/git_basic/blob/main/README.md#cleanup-and-back-to-origin)
 - [Comprasions](https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-basic-commands)
+  * [Comparing working directory and staging area and git repro](https://github.com/gonjumixproject/git_basic/blob/main/README.md#cleanup-and-back-to-origin)
+  * [Comparing the commits](https://github.com/gonjumixproject/git_basic/blob/main/README.md#cleanup-and-back-to-origin)
+  * [Comparing between local and remote master branches](https://github.com/gonjumixproject/git_basic/blob/main/README.md#cleanup-and-back-to-origin)
+
+
  
 
 
