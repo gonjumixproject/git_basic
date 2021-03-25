@@ -969,6 +969,11 @@ Delete the branch;
 git branch -d ReadmeEdits
 ```
 
-## Disable Fast Forward Merge
+Disable fast forward;
 
+```
+git merge xx --no-ff
+```
+
+## Auto merges
 
