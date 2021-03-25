@@ -812,7 +812,7 @@ To https://github.com/gonjumixproject/iptv.git
 #Comprasions
 
 ## Comparing working directory and staging area and git repro
-
+```
 To add the changes into the staging area, you need to perform : Git Add 
 To add the staging area docs into git repro in your local : Git Commit
 To add the git repro to the git local server : Git Push
@@ -821,7 +821,7 @@ To get the latest updates from the git local server : Git Pull
 To see the differences between the staging area (latest add command) and working space : ``` git diff or git difftool```
 To see the differences between the git repro ( latest commit command) and working space :```  git diff HEAD or git difftool HEAD ``` 
 To see the differences between the staging area ( latest add commad ) and git repro ( last commit) : ``` git diff --staged HEAD or git difftool --staged HEAD```
-
+```
 ## Limiting the Comparsons to one File 
 
 
