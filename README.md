@@ -17,7 +17,8 @@
   * [Git Alias](https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-alias)
   * [Ignoring unwanted files and folders](https://github.com/gonjumixproject/git_basic/blob/main/README.md#ignoring-unwanted-files-and-folders)
   * [Cleanup and back to origin](https://github.com/gonjumixproject/git_basic/blob/main/README.md#cleanup-and-back-to-origin)
-  * 
+- [Comprasions](https://github.com/gonjumixproject/git_basic/blob/main/README.md#git-basic-commands)
+ 
 
 
 # Git Quick Start
@@ -808,4 +809,26 @@ To https://github.com/gonjumixproject/iptv.git
 ```
 
 
+#Comprasions
 
+## Comparing working directory and staging area 
+
+So git status will show you that the file is modified but will not show you which files are modified. To understand that you will need git diff command.
+
+```
+~/git/iptv# git diff
+diff --git a/README.md b/README.md
+index c6b6a091..c3e106bd 100644
+--- a/README.md
++++ b/README.md
+@@ -8,6 +8,8 @@ what you gonna do
+
+ I have another readme file as well, so we will see what is gonna happen
+
++tests
+```
+Or you can use "git difftool" command.
+
+The "git diff" and "difftool" command are all for the "NOT STAGED" modifications. If you perform an add for that projects, then diff/difftool will not show any difference. 
+
+## Comparing working directory and git repro ( last commit)
