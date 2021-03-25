@@ -814,7 +814,7 @@ To https://github.com/gonjumixproject/iptv.git
 ```
 
 
-#Comprasions
+# Comprasions
 
 ## Comparing working directory and staging area and git repro
 ```
