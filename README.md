@@ -822,7 +822,26 @@ To see the differences between the staging area (latest add command) and working
 To see the differences between the git repro ( latest commit command) and working space :```  git diff HEAD or git difftool HEAD ``` 
 To see the differences between the staging area ( latest add commad ) and git repro ( last commit) : ``` git diff --staged HEAD or git difftool --staged HEAD```
 ```
-## Limiting the Comparsons to one File 
+## Comparing the commits
 
+You will need to get the commit ID and check the diff of them, you can also use git difftool
 
+```
+~/git/git_basic# git log --oneline
+7c6991a (HEAD -> main, origin/main, origin/HEAD) new changes
+cc11bb2 new changes
+d9ccce5 adding new sections
+~/git/git_basic# git diff 7c6991a cc11bb2
 
+~/git/git_basic#  git diff HEAD 24d9992
+
+```
+
+## Comparing between local and remote master branches
+
+Master is your local repro under your comp
+Origin/master is your remote repro in github server
+
+```
+git diff master origin/master
+```
