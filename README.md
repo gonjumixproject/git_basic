@@ -946,7 +946,7 @@ We committed a change on ReadmeEdits branch, but we need that changes on master 
  1 file changed, 8 insertions(+), 2 deletions(-)
 ~/git/git_basic# git log --oneline
 78d636a (HEAD -> ReadmeEdits) changing the file
-``
+```
 
 Before merging the changes, we wanna know the differences.
 
@@ -957,7 +957,6 @@ git checkout main
 Check the differences;
 ```
 git difftoll main ReadmeEdits
-
 ```
 Perform git merge;
 
