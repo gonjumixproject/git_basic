@@ -969,8 +969,6 @@ Delete the branch;
 git branch -d ReadmeEdits
 ```
 
-<<<<<<< HEAD
-=======
 Disable fast forward;
 
 ```
