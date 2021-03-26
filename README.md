@@ -980,3 +980,4 @@ git merge xx --no-ff
 ## Auto merges
 >>>>>>> simple-changes
 
+This will be a new changes from the mail
