@@ -980,3 +980,10 @@ git merge xx --no-ff
 ## Auto merges
 >>>>>>> simple-changes
 
+## Conflict Merge and Resolution
+
+Do a change on the one branch
+Make similar kind of change on the main branch
+Try to merge, and observe the conflict
+
+Updating the file from realwork
