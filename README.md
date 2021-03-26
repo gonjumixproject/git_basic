@@ -977,7 +977,8 @@ Disable fast forward;
 git merge xx --no-ff
 ```
 
-## Auto merges
->>>>>>> simple-changes
-
-This will be a new changes from the mail
+## Conflict Merge and Resolution
+Do a change on the one branch
+Make similar kind of change on the main branch
+Try to merge, and observe the conflict
+Updating the file from realwork
