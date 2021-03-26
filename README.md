@@ -982,3 +982,52 @@ Do a change on the one branch
 Make similar kind of change on the main branch
 Try to merge, and observe the conflict
 Updating the file from realwork
+
+Create new branch and switch:
+```
+~/git/git_basic# git checkout -b realwork
+Switched to a new branch 'realwork'
+```
+Make some changes on the Readmifile.Commit the changes.
+```
+:~/git/git_basic# vi README.md
+~/git/git_basic# git commit -am "Making changes on readme file"
+```
+Jump into the main branch and make similar changes on Readme file, and commit the changes.
+
+```
+~/git/git_basic# git checkout main
+~/git/git_basic# vi README.md
+~/git/git_basic# git add README.md
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/git_basic# git commit -m  "changes on readme pls"
+[main 69a2a97] changes on readme pls
+ 1 file changed, 1 insertion(+)
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/git_basic# git log --oneline --graph --decorate --all
+```
+
+Try to merge the changes, observe the conflict
+```
+/git/git_basic# git merge realwork
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+Remove the conflicts via "mergetool"
+```
+~/git/git_basic# git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff
+Merging:
+README.md
+
+Normal merge conflict for 'README.md':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+~/git/git_basic# vi README.md
+~/git/git_basic# git commit -am "Conflict cleared"
+```
