@@ -1157,7 +1157,6 @@ To abort and get back to the state before "git rebase", run "git rebase --abort"
 /home/git_basic# git rebase --abort
 
 ```
-<<<<<<< HEAD
 use git mergetool to solve the conflict and continue with rebase continue to solve the conflict;
 
 ```
@@ -1182,13 +1181,3 @@ Applying: adding some new things
 ``` 
 
 
-=======
- 
-adding new thins i donttooo
-=======
-new lines again and again
-
-changong beybiii
-
->>>>>>> adding some new things
->>>>>>> bigtrouble
