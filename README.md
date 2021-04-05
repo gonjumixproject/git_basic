@@ -1076,7 +1076,7 @@ Applying: hello hello
 /home/git_basic# git log --oneline --decorate --all --graph
 ```
 
-# Rebase Conflict
+# Create Rebase Conflict
 
 add changes on the readme file by main branch and commit changes, and then switch to the new branch;
 ```
@@ -1115,4 +1115,46 @@ Your branch is ahead of 'origin/main' by 8 commits.
 nothing to commit, working tree clean
 ```
 
+# Use Rebase over the Conflict / Abort the Rebase
+
+Switch back to the "bigtrouble" branch
+Check the diff between "bigtrouble" and "main" via difftoll
+Try to rebase
+Rebase abort
+
+```
+/home/git_basic# git difftool main bigtrouble
+
+This message is displayed because 'diff.tool' is not configured.
+See 'git difftool --tool-help' or 'git help config' for more details.
+'git difftool' will now attempt to use one of the following tools:
+kompare emerge vimdiff
+
+Viewing (1/1): 'README.md'
+Launch 'vimdiff' [Y/n]? Y
+2 files to edit
+/home/git_basic# git rebase main
+First, rewinding head to replay your work on top of it...
+Applying: adding some new things
+Using index info to reconstruct a base tree...
+M       README.md
+.git/rebase-apply/patch:12: new blank line at EOF.
++
+warning: 1 line adds whitespace errors.
+Falling back to patching base and 3-way merge...
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: Failed to merge in the changes.
+Patch failed at 0001 adding some new things
+hint: Use 'git am --show-current-patch' to see the failed patch
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+
+
+/home/git_basic# git rebase --abort
+
+```
+ 
 adding new thins i donttooo
