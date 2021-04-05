@@ -21,7 +21,8 @@
   * [Comparing working directory and staging area and git repro](https://github.com/gonjumixproject/git_basic/blob/main/README.md#comparing-working-directory-and-staging-area-and-git-repro)
   * [Comparing the commits](https://github.com/gonjumixproject/git_basic/blob/main/README.md#comparing-the-commits)
   * [Comparing between local and remote master branches](https://github.com/gonjumixproject/git_basic/blob/main/README.md#comparing-between-local-and-remote-master-branches)
-
+- [Git Rebasing] ()
+  * [Simple Rebase Example]
 
  
 
@@ -1029,3 +1030,7 @@ Hit return to start merge resolution tool (vimdiff):
 ~/git/git_basic# vi README.md
 ~/git/git_basic# git commit -am "Conflict cleared"
 ```
+
+# Git Rebase
+
+
