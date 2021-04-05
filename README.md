@@ -1193,6 +1193,8 @@ Stash command is used for working process changes.
 
 Lets say you added a line into a folder, but its not complete yet and you will continue later.
 
+## Stash basic examples
+
 You will use "git stash" to continue with other changes before committing it since its not done yet.
 
 ```
@@ -1221,3 +1223,30 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 /home/git_basic# git commit -am 'changes added'
 ```
+
+## Stashing untracked files and using pop
+
+git stash will only stash the modified files, and not stash the untracked files as in new created files. 
+To stash the new created files;
+
+
+```
+
+/home/git_basic# git stash -u
+Saved working directory and index state WIP on main: 584b860 Stashing added
+/home/git_basic# git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+/home/git_basic# vi README.md
+home/git_basic# git stash list
+stash@{0}: WIP on main: 584b860 Stashing added
+```
+
+we basicly use 'git stash apply' and 'git stash drop' for the latest stashed file.
+we can direcly use 'git pop' instead of that two commands;
+
+```
+
