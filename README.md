@@ -1180,4 +1180,5 @@ Hit return to start merge resolution tool (vimdiff):
 Applying: adding some new things
 ``` 
 
+trying to rebase with github
 
