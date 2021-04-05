@@ -1062,17 +1062,19 @@ Your branch is ahead of 'origin/main' by 1 commit.
 /home/git_basic#
 
 ```
-Go back to myfeature branch, and chec
-root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git commit -am 'new lines for branding added'
+Go back to myfeature branch, and check the changes, the changes on the main is not imported to this branch;
+Rebase with the main to get the changes
+```
+/home/git_basic# git commit -am 'new lines for branding added'
 [main 3bff579] new lines for branding added
  1 file changed, 30 insertions(+)
-root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git rebase main
-Current branch main is up to date.
-root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git checkout myfeature
+/home/git_basic# git checkout myfeature
 Switched to branch 'myfeature'
-root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git rebase main
+/home/git_basic# git rebase main
 First, rewinding head to replay your work on top of it...
 Applying: hello hello
-root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git log --oneline --decorate --all --graph
+/home/git_basic# git log --oneline --decorate --all --graph
+```
 
-new lines
+# Rebase Conflict
+
