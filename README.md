@@ -1184,3 +1184,7 @@ Applying: adding some new things
 
 trying to rebase with github
 
+
+# Stashing
+
+
