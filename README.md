@@ -1078,3 +1078,5 @@ Applying: hello hello
 
 # Rebase Conflict
 
+
+adding new thins i donttooo
