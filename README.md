@@ -1078,6 +1078,7 @@ Applying: hello hello
 
 # Create Rebase Conflict
 
+<<<<<<< HEAD
 add changes on the readme file by main branch and commit changes, and then switch to the new branch;
 ```
 /home/git_basic# git checkout main
@@ -1158,3 +1159,9 @@ To abort and get back to the state before "git rebase", run "git rebase --abort"
 ```
  
 adding new thins i donttooo
+=======
+new lines again and again
+
+changong beybiii
+
+>>>>>>> adding some new things
