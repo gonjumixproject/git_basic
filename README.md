@@ -45,43 +45,49 @@ git clone https://github.com/gonjumixproject/git_basics.git
 ```
 ## How to add a new file into the remote github repro
 
-<pre>/git/git_basics#vi lesson_1_quickstart.txt
+create a new file with vi
+<pre>/git/git_basics# vi lesson_1_quickstart.txt </pre>
+
+check the git status, add the file into the working dir, push the changes to github.
+```
 /git/git_basics# git status
-/git/git_basics#git add lesson_1_quickstart.txt
-/git/git_basics#git commit -m "Added first text file"
+/git/git_basics# git add lesson_1_quickstart.txt
+/git/git_basics# git commit -m "Added first text file"
 /git/git_basics# git push
 or
 /git/git_basics# git push origin master
-</pre>
+```
 # Git Basic Commands
 
 ## Starting a Project
-> Starting a github project without any source code 
-> Create an empty project via git init.
+Starting a github project without any source code 
+Create an empty project via git init.
 ```
 /git# git init fresh_start 
 Initialized empty Git repository in /root/git/fresh_start/.git/
 ```
-> Get into the project folder. The folder seems empty but git files will be in it.
+Get into the project folder. The folder seems empty but git files will be in it.
 ```
-~/git# cd fresh_start/
-~/git/fresh_start# ls
-~/git/fresh_start# ls -al
+/git# cd fresh_start/
+
+/git/fresh_start# ls
+
+/git/fresh_start# ls -al
 total 12
 ```
-> Check the status of the project
+Check the status of the project
 ```
-~/git/fresh_start# git status
+/git/fresh_start# git status
 On branch master
 
 No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
 ```
-> Create a new file and check git status
+ Create a new file and check git status
 ```
-~/git/fresh_start# vi firstfile.txt
-~/git/fresh_start# git status
+/git/fresh_start# vi firstfile.txt
+/git/fresh_start# git status
 On branch master
 
 No commits yet
@@ -93,10 +99,10 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 ```
-> Use git add command
+ Use git add command
 ```
-~/git/fresh_start# git add firstfile.txt
-~/git/fresh_start# git status
+/git/fresh_start# git add firstfile.txt
+/git/fresh_start# git status
 On branch master
 
 No commits yet
@@ -107,7 +113,7 @@ Changes to be committed:
 ```
 > Use git commit command to fully add the file 
 ```
-~/git/fresh_start# git commit
+/git/fresh_start# git commit
 [master (root-commit) d37c0c4] this is my first file
  1 file changed, 1 insertion(+)
  create mode 100644 firstfile.txt
@@ -119,7 +125,7 @@ Lets assume you have a source code in your local folder.
 
 You source code does not have any .git folder, means that this is not a github project
 ```
-~/newfolder# ls -al
+/newfolder# ls -al
 
 08:14 .
 08:14 ..
@@ -127,13 +133,13 @@ You source code does not have any .git folder, means that this is not a github p
 ```
 Initiate a gothub project by git init
 ```
-~/newfolder# git init
+/newfolder# git init
 Initialized empty Git repository in /root/newfolder/.git/
 ```
 Check the git status;
 
 ```
-~/newfolder# git status
+/newfolder# git status
 On branch master
 
 No commits yet
@@ -145,8 +151,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```
 Add the files into the git project
 ```
-~/newfolder# git add .
-~/newfolder# git status
+/newfolder# git add .
+/newfolder# git status
 On branch master
 
 No commits yet
@@ -157,12 +163,12 @@ Changes to be committed:
 ```
 Perform the git commit
 ```
-~/newfolder# git commit -m "my first commit, inline"
+/newfolder# git commit -m "my first commit, inline"
 [master (root-commit) 39bf6a0] my first commit, inline
  1 file changed, 86 insertions(+)
  create mode 100755 install.sh
  
-~/newfolder# git status
+/newfolder# git status
 On branch master
 nothing to commit, working tree clean
 ```
@@ -171,16 +177,16 @@ nothing to commit, working tree clean
 First one project over the github page, and from your profile go to the forked repro and clone the project to your local.
 
 ```
-~/git# git clone https://github.com/gonjumixproject/iptv.git
+/git# git clone https://github.com/gonjumixproject/iptv.git
 ```
 Get into the file via "cd"
 
 ```
-~/git# cd iptv/
+/git# cd iptv/
 ```
 Check the git files
 ```
-~/git/iptv# ls -al
+/git/iptv# ls -al
 
   4096 Mar 24 08:35 .
   4096 Mar 24 08:34 ..
@@ -221,8 +227,8 @@ Working Directory >> Staging Area >> Repository (.git folder)
 
 Create a new file, in your local, and then use git status; "nothing added to commit but untracked files present"
 ```
-~/git/iptv# vi test.txt
-~/git/iptv# git status
+/git/iptv# vi test.txt
+/git/iptv# git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -235,9 +241,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 Use git add file to put the file into the staging area. When you used "git add" but did not committed any commit yet, the file will be in the staging area;
 This file is not yet committed, but its something that git is tracking, and its awaiting the next commit.
 ```
-~/git/iptv# git add test.txt
+/git/iptv# git add test.txt
 
-~/git/iptv# git status
+/git/iptv# git status
 Your branch is up to date with 'origin/master'.
 
 Changes to be committed:
@@ -246,14 +252,14 @@ Changes to be committed:
 ```
 Git commit command returns "master" which is the current branch that it commits, and then "02451dcd" which is a SHA-1 which is a unique identifier for the commit. 
 ```
-~/git/iptv# git commit -m "my first commit"
+/git/iptv# git commit -m "my first commit"
 [master 02451dcd] my first commit
  1 file changed, 1 insertion(+)
  create mode 100644 test.txt
 ```
 When you do a commit, everything in the staging area is committed, and added to the local repro.
 ```
-~/git/iptv# git status
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 1 commit.
   (use "git push" to publish your local commits)
@@ -266,7 +272,7 @@ So for now, a "git push" command needs to be performed to publish every file in 
 But before that "git push" command, we will perform "git pull origin master". This will update our repro with any changes that may have happend on the remote repro down to our local repro, just to make sure we're up tp date before we do any pushes back up to our remote repro.
 
 ```
-~/git/iptv# git pull origin master
+/git/iptv# git pull origin master
 From https://github.com/gonjumixproject/iptv
  * branch              master     -> FETCH_HEAD
 Already up to date.
@@ -275,7 +281,7 @@ Already up to date.
 Now we will perform a "git push"
 
 ```
-~/git/iptv# git push origin master
+/git/iptv# git push origin master
 Username for 'https://github.com': gonjumixproject
 Password for 'https://gonjumixproject@github.com':
 Enumerating objects: 4, done.
@@ -292,11 +298,11 @@ Go back to your browser and check your github repro on the github page to make s
 ## Tracked file
 Add new lines to your example test file;
 ```
-:~/git/iptv# vi test.txt
+/git/iptv# vi test.txt
 ```
 Check the git status;
 ```
-~/git/iptv# git status
+/git/iptv# git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -309,7 +315,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 You can shortly both add and commit in one line; 
 ```
-:~/git/iptv# git commit -am "this is my second commit"
+/git/iptv# git commit -am "this is my second commit"
 [master db1d5c1d] this is my second commit
  1 file changed, 1 insertion(+)
 
@@ -319,7 +325,7 @@ A tracked file is any file that Git is aware of and tracking actively. That woul
 git ls-files will list all the tracked files.
 
 ```
-~/git/iptv# git ls-files
+/git/iptv# git ls-files
 
 ```
 ## Editting file
@@ -327,7 +333,7 @@ git ls-files will list all the tracked files.
 When you modified a file, to you need to perform an add and commit to put that modified file into the staging area;
 
 ```
-~/git/iptv# git status
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 2 commits.
   (use "git push" to publish your local commits)
@@ -344,7 +350,7 @@ To put that into the staging area, you need to perform only "git add". If you wa
 You can do the both via "git commit -am "
 
 ```
-~/git/iptv# git commit -am "modifed another line"
+/git/iptv# git commit -am "modifed another line"
 [master c9a3a2da] modifed another line
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
@@ -365,7 +371,7 @@ lvl1/
 
 When you check the git status, you will only see the top directory for the new added files/folder.
 ```
-~/git/iptv# git status
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 3 commits.
   (use "git push" to publish your local commits)
@@ -379,11 +385,11 @@ nothing added to commit but untracked files present (use "git add" to track)
 To track all those files recursively you need to perform perform below;
 
 ```
-~/git/iptv# git add .
+/git/iptv# git add .
 ```
 With the add command that file will be placed as staged.
 ```
-~/git/iptv# git status
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 3 commits.
   (use "git push" to publish your local commits)
@@ -397,7 +403,7 @@ Changes to be committed:
 ```
 You can perform a commit to put them into your repro. 
 ```
-~/git/iptv# git commit -m "adding several files recursively"
+/git/iptv# git commit -m "adding several files recursively"
 On branch master
 Your branch is ahead of 'origin/master' by 4 commits.
   (use "git push" to publish your local commits)
@@ -408,7 +414,7 @@ nothing to commit, working tree clean
 
 Lets add some new lines into the lvl1.txt file, and perform a git status;
 ```
-~/git/iptv/lvl1# git status
+/git/iptv/lvl1# git status
 On branch master
 Your branch is ahead of 'origin/master' by 4 commits.
   (use "git push" to publish your local commits)
@@ -422,7 +428,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 Lets put them into the staging area 
 ```
-~/git/iptv/lvl1# git status
+/git/iptv/lvl1# git status
 On branch master
 Your branch is ahead of 'origin/master' by 4 commits.
   (use "git push" to publish your local commits)
@@ -433,8 +439,8 @@ Changes to be committed:
 ```
 But now you think that this file should not be committed yet, should be unstaged. You will be back to the "modified state"
 ```
-~/git/iptv/lvl1# git restore --staged lvl1.txt
-~/git/iptv/lvl1# git status;
+/git/iptv/lvl1# git restore --staged lvl1.txt
+/git/iptv/lvl1# git status;
 On branch master
 Your branch is ahead of 'origin/master' by 4 commits.
   (use "git push" to publish your local commits)
@@ -448,11 +454,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 You can also perform following command for the same;
 ```
-~/git/iptv/lvl1# git reset HEAD lvl1.txt
+/git/iptv/lvl1# git reset HEAD lvl1.txt
 Unstaged changes after reset:
 M       lvl1/lvl1.txt
 
-~/git/iptv/lvl1#  git status;
+/git/iptv/lvl1#  git status;
 On branch master
 Your branch is ahead of 'origin/master' by 4 commits.
   (use "git push" to publish your local commits)
@@ -467,7 +473,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Once the file is unstaged, you can directly go back to the previous-unmodified file as below;
 
 ```
-~/git/iptv/lvl1# git status
+/git/iptv/lvl1# git status
 On branch master
 Your branch is ahead of 'origin/master' by 4 commits.
   (use "git push" to publish your local commits)
@@ -481,11 +487,11 @@ nothing to commit, working tree clean
 
 With the "git mv" command you will be able to rename the file, and git will be staged that file but it will be not committed. So you can backuout the renaming.
 ```
-~/git/iptv/lvl1/lvl2/lvl3# git mv lvl13.txt lvl13_1.txt
-:~/git/iptv/lvl1/lvl2/lvl3# ls -l
+/git/iptv/lvl1/lvl2/lvl3# git mv lvl13.txt lvl13_1.txt
+/git/iptv/lvl1/lvl2/lvl3# ls -l
 total 4
 -rw-r--r-- 1 root root 18 Mar 24 10:00 lvl13_1.txt
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2/lvl3# git status
+git/iptv/lvl1/lvl2/lvl3# git status
 On branch master
 Your branch is ahead of 'origin/master' by 4 commits.
   (use "git push" to publish your local commits)
@@ -497,7 +503,7 @@ Changes to be committed:
 
 If I change the name of the file via using the bash "mv" command, git will get that operation as two operations.
 ```
-~/git/iptv/lvl1/lvl2# git status
+/git/iptv/lvl1/lvl2# git status
 On branch master
 Your branch is ahead of 'origin/master' by 5 commits.
   (use "git push" to publish your local commits)
@@ -515,8 +521,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 -A will update any files renamed/moved or deleted.
 ```
-~/git/iptv/lvl1/lvl2# git add -A
-~/git/iptv/lvl1/lvl2# git status
+/git/iptv/lvl1/lvl2# git add -A
+/git/iptv/lvl1/lvl2# git status
 On branch master
 Your branch is ahead of 'origin/master' by 5 commits.
   (use "git push" to publish your local commits)
@@ -527,10 +533,10 @@ Changes to be committed:
 ```
 If i want to backout the git rename, then I will need to use the git mv command to directly change the name back to old name;
 ```
-~/git/iptv/lvl1/lvl2# git mv lvl2_1.txt 2.txt
-~/git/iptv/lvl1/lvl2# ls
+/git/iptv/lvl1/lvl2# git mv lvl2_1.txt 2.txt
+/git/iptv/lvl1/lvl2# ls
 2.txt  lvl3
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2# git status
+root@ubuntu-s-1vcpu-1gb-fra1-01:/git/iptv/lvl1/lvl2# git status
 On branch master
 Your branch is ahead of 'origin/master' by 6 commits.
   (use "git push" to publish your local commits)
@@ -542,16 +548,16 @@ Changes to be committed:
 
 If i rename it back to old file name, git status will not detect any changes.
 ```
-~/git/iptv/lvl1/lvl2# git mv 2.txt lvl2_1.txt
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv/lvl1/lvl2# git status
+/git/iptv/lvl1/lvl2# git mv 2.txt lvl2_1.txt
+root@ubuntu-s-1vcpu-1gb-fra1-01:/git/iptv/lvl1/lvl2# git status
 On branch master
 Your branch is ahead of 'origin/master' by 6 commits.
   (use "git push" to publish your local commits)
 ```
 Move the file via git mv
 ```
-~/git/iptv/lvl1/lvl2# git mv lvl2_1.txt lvl3/
-~/git/iptv/lvl1/lvl2# git status
+/git/iptv/lvl1/lvl2# git mv lvl2_1.txt lvl3/
+/git/iptv/lvl1/lvl2# git status
 On branch master
 Your branch is ahead of 'origin/master' by 6 commits.
   (use "git push" to publish your local commits)
@@ -560,8 +566,8 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         renamed:    lvl2_1.txt -> lvl3/lvl2_1.txt
 
-~/git/iptv/lvl1/lvl2# cd lvl3/
-:~/git/iptv/lvl1/lvl2/lvl3# git status
+/git/iptv/lvl1/lvl2# cd lvl3/
+:/git/iptv/lvl1/lvl2/lvl3# git status
 On branch master
 Your branch is ahead of 'origin/master' by 6 commits.
   (use "git push" to publish your local commits)
@@ -570,8 +576,8 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         renamed:    ../lvl2_1.txt -> lvl2_1.txt
 
-~/git/iptv/lvl1/lvl2/lvl3# cd ../
-~/git/iptv/lvl1/lvl2# git commit -m "moving file"
+/git/iptv/lvl1/lvl2/lvl3# cd ../
+/git/iptv/lvl1/lvl2# git commit -m "moving file"
 [master 8cb12ab5] moving file
  1 file changed, 0 insertions(+), 0 deletions(-)
  rename lvl1/lvl2/{ => lvl3}/lvl2_1.txt (100%)
@@ -583,8 +589,8 @@ nothing to commit, working tree clean
 
 If you try to remove an untracked file via "git rm", git will not able to find. so you need to use "rm" for untracked files.
 ```
-~/git/iptv# vi test2.txt
-~/git/iptv# git status
+/git/iptv# vi test2.txt
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 8 commits.
   (use "git push" to publish your local commits)
@@ -594,17 +600,17 @@ Untracked files:
         test2.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
-~/git/iptv# git rm test2.txt
+/git/iptv# git rm test2.txt
 fatal: pathspec 'test2.txt' did not match any files
 ```
 
 List all the tracked files, and use "git rm" to remove a tracked file. The delete will be staged, but you need to perform a commit to make it permanent.
 ```
-~/git/iptv# git ls-files
+/git/iptv# git ls-files
 ..
-~/git/iptv# git rm test.txt
+/git/iptv# git rm test.txt
 rm 'test.txt'
-~/git/iptv# git status
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 8 commits.
   (use "git push" to publish your local commits)
@@ -612,17 +618,17 @@ Your branch is ahead of 'origin/master' by 8 commits.
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         deleted:    test.txt
-:~/git/iptv# git commit -m 'deleting this file'
+/git/iptv# git commit -m 'deleting this file'
 
 ```
 Backout the deletion : git restore command will unstaged the deletion, it will not restore the file to the file system. You need to perform "git checkout" command to do that.
 
 ```
-~/git/iptv# git add newfile
-~/git/iptv# git commit -m "a new fil"
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv# git rm newfile
+/git/iptv# git add newfile
+/git/iptv# git commit -m "a new fil"
+/git/iptv# git rm newfile
 rm 'newfile'
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv# git status
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 10 commits.
   (use "git push" to publish your local commits)
@@ -631,8 +637,8 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         deleted:    newfile
 
-~/git/iptv# git restore --staged newfile
-~/git/iptv# git status
+/git/iptv# git restore --staged newfile
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 10 commits.
   (use "git push" to publish your local commits)
@@ -643,13 +649,13 @@ Changes not staged for commit:
         deleted:    newfile
 
 no changes added to commit (use "git add" and/or "git commit -a")
-~/git/iptv#  git checkout -- newfile
+/git/iptv#  git checkout -- newfile
 ```
 
 If you remove a tracked file without using the "git rm" commands. You can backout the rm command like in the previous section. (git checkout)
 ```
-~/git/iptv# rm newfile
-~/git/iptv# git status
+/git/iptv# rm newfile
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 10 commits.
   (use "git push" to publish your local commits)
@@ -660,12 +666,12 @@ Changes not staged for commit:
         deleted:    newfile
 
 no changes added to commit (use "git add" and/or "git commit -a")
-:~/git/iptv# git add -A
+:/git/iptv# git add -A
 ```
 ## History
 
 ```
-~/git/iptv# git log
+/git/iptv# git log
 commit 1e999c1d120c35bb6cca253c60faee4dd6d38c52 (HEAD -> master)
 Author: gonjumixproject <gonjmixproject@gmail.com>
 Date:   Wed Mar 24 10:29:48 2021 +0000
@@ -675,7 +681,7 @@ Date:   Wed Mar 24 10:29:48 2021 +0000
 
 The commit line has been shortened;
 ```
-~/git/iptv# git log --abbrev-commit
+/git/iptv# git log --abbrev-commit
 
 
 commit 54645127
@@ -686,7 +692,7 @@ Date:   Wed Mar 24 10:03:41 2021 +0000
 ```
 
 ```
-~/git/iptv# git log --oneline --graph --decorate
+/git/iptv# git log --oneline --graph --decorate
 
 * 1e999c1d (HEAD -> master) a new fil
 * 4a98b1e8 deleting this file
@@ -707,7 +713,7 @@ Date:   Wed Mar 24 10:03:41 2021 +0000
 
 Only specified commits;
 ```
-~/git/iptv# git log d165b73f...54645127
+/git/iptv# git log d165b73f...54645127
 commit d165b73f81445c309af4b3c67eb9cc9a664eaf75
 Author: gonjumixproject <gonjmixproject@gmail.com>
 Date:   Wed Mar 24 10:16:12 2021 +0000
@@ -728,7 +734,7 @@ Date:   Wed Mar 24 10:08:44 2021 +0000
 Date specified history;
 
 ```
-:~/git/iptv# git log --since="3 days ago"
+:/git/iptv# git log --since="3 days ago"
 
 commit bf84c36b1412c02b08fc4a8eb0d72ed6419e000b
 Author: gonjumixproject <gonjmixproject@gmail.com>
@@ -742,7 +748,7 @@ Author: gonjumixproject <gonjmixproject@gmail.com>
 File specified history;
 
 ```
-~/git/iptv# git log -- newfile
+/git/iptv# git log -- newfile
 commit 1e999c1d120c35bb6cca253c60faee4dd6d38c52 (HEAD -> master)
 Author: gonjumixproject <gonjmixproject@gmail.com>
 Date:   Wed Mar 24 10:29:48 2021 +0000
@@ -752,7 +758,7 @@ Date:   Wed Mar 24 10:29:48 2021 +0000
 
 Will show the latest file detailed histroy;
 ```
-~/git/iptv# git show
+/git/iptv# git show
 commit 1e999c1d120c35bb6cca253c60faee4dd6d38c52 (HEAD -> master)
 Author: gonjumixproject <gonjmixproject@gmail.com>
 Date:   Wed Mar 24 10:29:48 2021 +0000
@@ -768,10 +774,10 @@ index 00000000..e69de29b
 Will create a shorter command as alias named "hist" for "log --all --graph --decorate --oneline" command;
 
 ```
- ~/git/iptv#git config --global alias.hist "log --all --graph --decorate --oneline"
- ~/git/iptv#git hist
+ /git/iptv#git config --global alias.hist "log --all --graph --decorate --oneline"
+ /git/iptv#git hist
  
- ~/git/iptv# vi ~/.gitconfig
+ /git/iptv# vi /.gitconfig
  [alias]
         hist = log --all --graph --decorate --oneline
  ```
@@ -788,7 +794,7 @@ Editting ".gitignore" file will be helpfull for that;
 
 We have 10 commits ahead from the original thing;
 ```
-~/git/iptv# git status
+/git/iptv# git status
 On branch master
 Your branch is ahead of 'origin/master' by 10 commits.
   (use "git push" to publish your local commits)
@@ -797,11 +803,11 @@ nothing to commit, working tree clean
 ```
 Push the changes to the github
 ```
-~/git/iptv# git pull origin master
+/git/iptv# git pull origin master
 From https://github.com/gonjumixproject/iptv
  * branch              master     -> FETCH_HEAD
 Already up to date.
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/iptv# git push origin master
+root@ubuntu-s-1vcpu-1gb-fra1-01:/git/iptv# git push origin master
 Username for 'https://github.com': gonjumixproject
 Password for 'https://gonjumixproject@github.com':
 Enumerating objects: 39, done.
@@ -833,13 +839,13 @@ To see the differences between the staging area ( latest add commad ) and git re
 You will need to get the commit ID and check the diff of them, you can also use git difftool
 
 ```
-~/git/git_basic# git log --oneline
+/git/git_basic# git log --oneline
 7c6991a (HEAD -> main, origin/main, origin/HEAD) new changes
 cc11bb2 new changes
 d9ccce5 adding new sections
-~/git/git_basic# git diff 7c6991a cc11bb2
+/git/git_basic# git diff 7c6991a cc11bb2
 
-~/git/git_basic#  git diff HEAD 24d9992
+/git/git_basic#  git diff HEAD 24d9992
 
 ```
 
@@ -871,7 +877,7 @@ git status
 ```
 List the existing branches;
 ```
-~/git/git_basic# git branch -a
+/git/git_basic# git branch -a
 * main
   remotes/origin/HEAD -> origin/main
   remotes/origin/main
@@ -879,8 +885,8 @@ List the existing branches;
 
 Create a new branch 
 ```
-~/git/git_basic# git branch mynewbranch
-~/git/git_basic# git branch -a
+/git/git_basic# git branch mynewbranch
+/git/git_basic# git branch -a
 * main
   mynewbranch
   remotes/origin/HEAD -> origin/main
@@ -889,10 +895,10 @@ Create a new branch
 Switch to the newly createad branch
 
 ```
-~/git/git_basic# git checkout mynewbranch
+/git/git_basic# git checkout mynewbranch
 M       README.md
 Switched to branch 'mynewbranch'
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/git_basic# git branch -a
+root@ubuntu-s-1vcpu-1gb-fra1-01:/git/git_basic# git branch -a
   main
 * mynewbranch
   remotes/origin/HEAD -> origin/main
@@ -901,13 +907,13 @@ root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/git_basic# git branch -a
 ```
 Check the history to see what happend;
 ```
-~/git/git_basic# git log --oneline --decorate
+/git/git_basic# git log --oneline --decorate
 77dbf07 (HEAD -> mynewbranch, origin/main, origin/HEAD, main) Merge branch 'main' of https://github.com/gonjumixproject/git_basic into main :q!
 ```
 Go back to your main branch;
 
 ```
-~/git/git_basic# git checkout main
+/git/git_basic# git checkout main
 
 M       README.md
 Switched to branch 'main'
@@ -915,8 +921,8 @@ Your branch is up to date with 'origin/main'.
 ```
 Change your branch name;
 ```
-~/git/git_basic# git branch -m mynewbranch newbranch
-~/git/git_basic# git branch -a
+/git/git_basic# git branch -m mynewbranch newbranch
+/git/git_basic# git branch -a
 * main
   newbranch
   remotes/origin/HEAD -> origin/main
@@ -924,7 +930,7 @@ Change your branch name;
 ```
 Delete the branch;
 ```
-~/git/git_basic# git branch -d newbranch
+/git/git_basic# git branch -d newbranch
 ```
 
 
@@ -933,19 +939,19 @@ Delete the branch;
 
 Create a new branch, and directly switch to that branch;
 ```
-~/git/git_basic# git checkout -b ReadmeEdits
+/git/git_basic# git checkout -b ReadmeEdits
 Switched to a new branch 'ReadmeEdits'
-~/git/git_basic# git status
+/git/git_basic# git status
 On branch ReadmeEdits
 nothing to commit, working tree clean
 ```
 We committed a change on ReadmeEdits branch, but we need that changes on master as well.
 
 ```
-~/git/git_basic# git commit -am "changing the file"
+/git/git_basic# git commit -am "changing the file"
 [ReadmeEdits 78d636a] changing the file
  1 file changed, 8 insertions(+), 2 deletions(-)
-~/git/git_basic# git log --oneline
+/git/git_basic# git log --oneline
 78d636a (HEAD -> ReadmeEdits) changing the file
 ```
 
@@ -984,24 +990,24 @@ Updating the file from realwork
 
 Create new branch and switch:
 ```
-~/git/git_basic# git checkout -b realwork
+/git/git_basic# git checkout -b realwork
 Switched to a new branch 'realwork'
 ```
 Make some changes on the Readmifile.Commit the changes.
 ```
-:~/git/git_basic# vi README.md
-~/git/git_basic# git commit -am "Making changes on readme file"
+/git/git_basic# vi README.md
+/git/git_basic# git commit -am "Making changes on readme file"
 ```
 Jump into the main branch and make similar changes on Readme file, and commit the changes.
 
 ```
-~/git/git_basic# git checkout main
-~/git/git_basic# vi README.md
-~/git/git_basic# git add README.md
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/git_basic# git commit -m  "changes on readme pls"
+/git/git_basic# git checkout main
+/git/git_basic# vi README.md
+/git/git_basic# git add README.md
+root@ubuntu-s-1vcpu-1gb-fra1-01:/git/git_basic# git commit -m  "changes on readme pls"
 [main 69a2a97] changes on readme pls
  1 file changed, 1 insertion(+)
-root@ubuntu-s-1vcpu-1gb-fra1-01:~/git/git_basic# git log --oneline --graph --decorate --all
+root@ubuntu-s-1vcpu-1gb-fra1-01:/git/git_basic# git log --oneline --graph --decorate --all
 ```
 
 Try to merge the changes, observe the conflict
@@ -1013,7 +1019,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 ```
 Remove the conflicts via "mergetool"
 ```
-~/git/git_basic# git mergetool
+/git/git_basic# git mergetool
 
 This message is displayed because 'merge.tool' is not configured.
 See 'git mergetool --tool-help' or 'git help config' for more details.
@@ -1027,8 +1033,8 @@ Normal merge conflict for 'README.md':
   {remote}: modified file
 Hit return to start merge resolution tool (vimdiff):
 4 files to edit
-~/git/git_basic# vi README.md
-~/git/git_basic# git commit -am "Conflict cleared"
+/git/git_basic# vi README.md
+/git/git_basic# git commit -am "Conflict cleared"
 ```
 
 # Git Rebase
