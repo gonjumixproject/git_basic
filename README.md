@@ -21,8 +21,10 @@
   * [Comparing working directory and staging area and git repro](https://github.com/gonjumixproject/git_basic/blob/main/README.md#comparing-working-directory-and-staging-area-and-git-repro)
   * [Comparing the commits](https://github.com/gonjumixproject/git_basic/blob/main/README.md#comparing-the-commits)
   * [Comparing between local and remote master branches](https://github.com/gonjumixproject/git_basic/blob/main/README.md#comparing-between-local-and-remote-master-branches)
-- [Git Rebasing] ()
-  * [Simple Rebase Example]
+- [Git Rebasing] (https://github.com/gonjumixproject/git_basic#git-rebase)
+  * [Simple Rebase Example] (https://github.com/gonjumixproject/git_basic#create-rebase-conflict)
+  * [Use Rebase over the Conflict / Abort the Rebase] (https://github.com/gonjumixproject/git_basic#use-rebase-over-the-conflict--abort-the-rebase)
+  
 
  
 
