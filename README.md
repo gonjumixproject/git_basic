@@ -1078,5 +1078,41 @@ Applying: hello hello
 
 # Rebase Conflict
 
+add changes on the readme file by main branch and commit changes, and then switch to the new branch;
+```
+/home/git_basic# git checkout main
+M       README.md
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 5 commits.
+  (use "git push" to publish your local commits)
+/home/git_basic# vi README.md
+/home/git_basic# git commit -am "new lines aded"
+[main a6651fa] new lines aded
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+/home/git_basic# git checkout -b bigtrouble
+Switched to a new branch 'bigtrouble'
+```
+add changes into the Readme file from 'bigtrouble' branch, commit changes and then switch back to the main branch;
+
+```
+/home/git_basic# vi README.md
+/home/git_basic# git commit -am "adding some new things"
+[bigtrouble afca7fa] adding some new things
+ 1 file changed, 4 insertions(+)
+/home/git_basic# git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 7 commits.
+  (use "git push" to publish your local commits)
+/home/git_basic# vi README.md
+/home/git_basic# git commit -am "new things"
+[main f8de016] new things
+ 1 file changed, 2 insertions(+)
+/home/git_basic# git status
+On branch main
+Your branch is ahead of 'origin/main' by 8 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
 
 adding new thins i donttooo
