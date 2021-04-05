@@ -1076,7 +1076,7 @@ Applying: hello hello
 /home/git_basic# git log --oneline --decorate --all --graph
 ```
 
-# Create Rebase Conflict
+## Create Rebase Conflict
 
 <<<<<<< HEAD
 add changes on the readme file by main branch and commit changes, and then switch to the new branch;
@@ -1116,7 +1116,7 @@ Your branch is ahead of 'origin/main' by 8 commits.
 nothing to commit, working tree clean
 ```
 
-# Use Rebase over the Conflict / Abort the Rebase
+## Use Rebase over the Conflict / Abort the Rebase
 
 Switch back to the "bigtrouble" branch
 Check the diff between "bigtrouble" and "main" via difftoll
