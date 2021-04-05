@@ -31,7 +31,7 @@
 
 # Git Quick Start
 
-> Somae basic commands for quick start
+Some basic commands for quick start
 
 ## How to set global user-pass values
 ```
