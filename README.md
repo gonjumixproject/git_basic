@@ -1249,4 +1249,6 @@ we basicly use 'git stash apply' and 'git stash drop' for the latest stashed fil
 we can direcly use 'git pop' instead of that two commands;
 
 ```
+/home/git_basic# git stash pop
 
+```
