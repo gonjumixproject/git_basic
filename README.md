@@ -1033,4 +1033,34 @@ Hit return to start merge resolution tool (vimdiff):
 
 # Git Rebase
 
+added a new branch, and switched to that branch
+```
+/home/git_basic# git checkout -b myfeature
+Switched to a new branch 'myfeature'
+```
+add a new file from that branch and commit changes etc.
+
+```
+/home/git_basic# vi humans.txt
+/home/git_basic# git add humans.txt
+/home/git_basic# git commit -am "hello hello"
+[myfeature eef5758] hello hello
+ 1 file changed, 1 insertion(+)
+ create mode 100644 humans.txt
+```
+switch to the main, add some changes to the readme,commit changes
+
+```
+/home/git_basic# git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+/home/git_basic# vi README.md
+/home/git_basic# git commit -am 'added new linew'
+[main 6331ce9] added new linew
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+/home/git_basic#
+
 adding new lines 
+```
+
