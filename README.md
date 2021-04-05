@@ -1033,4 +1033,4 @@ Hit return to start merge resolution tool (vimdiff):
 
 # Git Rebase
 
-
+adding new lines 
