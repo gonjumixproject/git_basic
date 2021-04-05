@@ -1156,5 +1156,27 @@ To abort and get back to the state before "git rebase", run "git rebase --abort"
 /home/git_basic# git rebase --abort
 
 ```
- 
-adding new thins i donttooo
+use git mergetool to solve the conflict and continue with rebase continue to solve the conflict;
+
+```
+
+/home/git_basic# git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff
+Merging:
+README.md
+
+Normal merge conflict for 'README.md':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+/home/git_basic# vi README.md
+/home/git_basic# git rebase --continue
+Applying: adding some new things
+``` 
+
+
