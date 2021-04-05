@@ -1188,3 +1188,36 @@ trying to rebase with github
 # Stashing
 
 
+
+Stash command is used for working process changes. 
+
+Lets say you added a line into a folder, but its not complete yet and you will continue later.
+
+You will use "git stash" to continue with other changes before committing it since its not done yet.
+
+```
+/home/git_basic# git stash
+Saved working directory and index state WIP on main: a16ee69 Update README.md
+/home/git_basic# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+```
+
+Perform "git stash apply" to apply the changes or continue
+
+```
+/home/git_basic# git stash apply
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+/home/git_basic# git commit -am 'changes added'
+```
