@@ -45,23 +45,21 @@ git clone https://github.com/gonjumixproject/git_basics.git
 ```
 ## How to add a new file into the remote github repro
 
-```
-/git/git_basics#vi lesson_1_quickstart.txt
+<pre>/git/git_basics#vi lesson_1_quickstart.txt
 /git/git_basics# git status
 /git/git_basics#git add lesson_1_quickstart.txt
 /git/git_basics#git commit -m "Added first text file"
 /git/git_basics# git push
 or
 /git/git_basics# git push origin master
-```
-
+</pre>
 # Git Basic Commands
 
 ## Starting a Project
 > Starting a github project without any source code 
 > Create an empty project via git init.
 ```
-/git# git init fresh_start
+/git# git init fresh_start 
 Initialized empty Git repository in /root/git/fresh_start/.git/
 ```
 > Get into the project folder. The folder seems empty but git files will be in it.
