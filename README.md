@@ -1061,6 +1061,18 @@ Your branch is ahead of 'origin/main' by 1 commit.
  1 file changed, 1 insertion(+), 1 deletion(-)
 /home/git_basic#
 
-adding new lines 
 ```
-adding new lines
+Go back to myfeature branch, and chec
+root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git commit -am 'new lines for branding added'
+[main 3bff579] new lines for branding added
+ 1 file changed, 30 insertions(+)
+root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git rebase main
+Current branch main is up to date.
+root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git checkout myfeature
+Switched to branch 'myfeature'
+root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git rebase main
+First, rewinding head to replay your work on top of it...
+Applying: hello hello
+root@ubuntu-s-1vcpu-1gb-fra1-01:/home/git_basic# git log --oneline --decorate --all --graph
+
+new lines
